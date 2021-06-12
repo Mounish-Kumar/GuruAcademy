@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<title>Guru Academy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    #home img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        min-height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .w3-bar .w3-button {
+        padding: 16px;
+    }
+
+    .mail {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .gallery {
+        width: 300px;
+        height: 300px;
+        max-width: 100%;
+        display: inline-block;
+        margin: 1rem;
+        box-shadow: 1px 1px 8px 0px #2e2e2e;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .icon img {
+        width: 150px;
+    }
+
+    .icon .w3-quarter {
+        margin-bottom: 5rem;
+    }
+
+    .icon p.w3-large {
+        font-weight: 1000;
+        margin-block-start: 1rem;
+        margin-block-end: 0;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    footer i {
+        padding: 0 1rem;
+    }
+
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    hr {
+        margin: auto;
+        width: 20%;
+        border-color: #fff;
+    }
+
+    #countdown {
+        letter-spacing: 0.2rem;
+        word-spacing: 0.6rem;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">GURU ACADEMY</a>
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+                <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+                <a href="#gallery" class="w3-bar-item w3-button"><i class="fa fa-th"></i> GALLERY</a>
+                <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+        style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close
+            ×</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+        <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button">GALLERY</a>
+        <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+    </nav>
+
+    <!-- Carousel -->
+    <div class="w3-display-container" id="home">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="middle w3-text-white overlay" style="padding:6rem 2rem">
+                        <span class="w3-jumbo w3-hide-small">Dear Parents!</span><br>
+                        <span class="w3-xxlarge w3-hide-small">Gift your children real assets for their future</span>
+                        <span class="w3-xxlarge w3-hide-medium w3-hide-large">Dear Parents!</span><br>
+                        <span class="w3-xlarge w3-hide-medium w3-hide-large">Gift your children real assets for their
+                            future</span>
+                        <br><br>
+                        <p><a href="#about"
+                                class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn
+                                more</a></p>
+                    </div>
+                    <img src="./images/home.jpg">
+                </div>
+
+                <div class="item">
+                    <div class="middle w3-text-white overlay" style="padding:6rem 2rem">
+                        <span class="w3-jumbo w3-hide-small">Pre-School!</span><br>
+                        <span class="w3-xxlarge w3-hide-small">Coming Soon</span>
+                        <span class="w3-xxlarge w3-hide-medium w3-hide-large">Pre-School!</span><br>
+                        <span class="w3-xlarge w3-hide-medium w3-hide-large">Coming Soon</span>
+                        <br><br>
+                        <hr><br>
+                        <p id="countdown" style="font-size:30px"></p>
+                    </div>
+                    <img src="./images/home_preschool.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+        <!--Social media icons-->
+        <div class="w3-display-bottomleft w3-text-white w3-xxlarge carousel-indicators" style="bottom:5rem">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </div>
+
+
+
+    <!-- About Section -->
+    <div class="w3-container" style="padding:128px 0 16px" id="about">
+        <h3 class="w3-center">ABOUT US</h3>
+        <p class="w3-center w3-large" style="margin-bottom:5rem">We provide happy learning experience for kids</p>
+        <div class="w3-row-padding w3-center icon">
+            <div class="w3-quarter">
+                <img src="./images/icon_dance.png">
+                <p class="w3-large">Dance</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_bharatanatyam.png">
+                <p class="w3-large">Bharatanatyam</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_karate.png">
+                <p class="w3-large">Karate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_abacus.png">
+                <p class="w3-large">Abacus</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center icon">
+            <div class="w3-quarter">
+                <img src="./images/icon_vocal.png">
+                <p class="w3-large">Vocal</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_keyboard.png">
+                <p class="w3-large">Keyboard</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_drums.png">
+                <p class="w3-large">Drums</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="./images/icon_preschool.png">
+                <p class="w3-large">Pre-School</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="w3-container" style="padding:128px 0 16px" id="team">
+        <h3 class="w3-center">OUR TEAM</h3>
+        <p class="w3-center w3-large">We are a pack of passionate and enthusiastic trainers</p>
+        <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="./images/Default DP.jpg" alt="John" style="width:100%">
+                    <div class="w3-container">
+                        <h3>John Doe</h3>
+                        <p class="w3-opacity">CEO & Founder</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.
+                        </p>
+                        <p class="w3-light-grey w3-block mail">
+                            <i class="fa fa-envelope"></i> rajaguru@guru.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="./images/Default DP.jpg" alt="Jane" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Anja Doe</h3>
+                        <p class="w3-opacity">Art Director</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.
+                        </p>
+                        <p class="w3-light-grey w3-block mail">
+                            <i class="fa fa-envelope"></i> rajaguru@guru.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="./images/Default DP.jpg" alt="Mike" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Mike Ross</h3>
+                        <p class="w3-opacity">Web Designer</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.
+                        </p>
+                        <p class="w3-light-grey w3-block mail">
+                            <i class="fa fa-envelope"></i> rajaguru@guru.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="./images/Default DP.jpg" alt="Dan" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Dan Star</h3>
+                        <p class="w3-opacity">Designer</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.
+                        </p>
+                        <p class="w3-light-grey w3-block mail">
+                            <i class="fa fa-envelope"></i> rajaguru@guru.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Section -->
+    <div class="w3-container" style="padding:128px 0 16px" id="gallery">
+        <h3 class="w3-center">GALLERY</h3>
+        <p class="w3-center w3-large">The moments we cherished</p>
+        <ul>
+            <li class="gallery">
+                <img src="./images/gallery_dance.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_bharatanatyam.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_karate.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_abacus.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_vocal.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_keyboard.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_drums.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+            <li class="gallery">
+                <img src="./images/gallery_preschool.jpg" onclick="onClick(this)" class="w3-hover-opacity">
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright"
+            title="Close Modal Image">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent">
+            <img id="img01" class="w3-image">
+            <p id="caption" class="w3-opacity w3-large"></p>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="w3-container w3-center" style="padding:128px 0 16px" id="pricing">
+        <h3>PRICING</h3>
+        <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+                    <li class="w3-black w3-xlarge w3-padding-32">Music Package</li>
+                    <li class="w3-padding-16">1 hr Vocal</li>
+                    <li class="w3-padding-16">1 hr Keyboard</li>
+                    <li class="w3-padding-16">1 hr Drums</li>
+                    <li class="w3-padding-16">1 hr Any Other</li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <h2>₹ 1500</h2>
+                        <span class="w3-opacity">per month</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+                    <li class="w3-teal w3-xlarge w3-padding-32">Complete Package</li>
+                    <li class="w3-padding-16">1 hr Dance/Bharatanatyam</li>
+                    <li class="w3-padding-16">1 hr Vocal</li>
+                    <li class="w3-padding-16">1 hr Keyboard/Drums</li>
+                    <li class="w3-padding-16">1 hr Any Other</li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <h2>₹ 2000</h2>
+                        <span class="w3-opacity">per month</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third">
+                <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+                    <li class="w3-black w3-xlarge w3-padding-32">Dance Package</li>
+                    <li class="w3-padding-16">1 hr Dance</li>
+                    <li class="w3-padding-16">1 hr Bharatanatyam</li>
+                    <li class="w3-padding-16">1 hr Karate</li>
+                    <li class="w3-padding-16">1 hr Any Other</li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <h2>₹ 1500</h2>
+                        <span class="w3-opacity">per month</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-container" style="padding-top:128px" id="contact">
+        <h3 class="w3-center">CONTACT</h3>
+        <p class="w3-center w3-large">Lets get in touch</p>
+        <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+            <div class="w3-third">
+                <p><i class="fa fa-envelope w3-xxlarge w3-text-black"></i></p>
+                <p>rajaguru@guru.com</p>
+            </div>
+            <div class="w3-third">
+                <p><i class="fa fa-map-marker w3-xxlarge w3-text-black"></i></p>
+                <p>Velachery, Chennai</p>
+            </div>
+            <div class="w3-third">
+                <p><i class="fa fa-phone w3-xxlarge w3-text-black"></i></p>
+                <p>+91 99999 99999</p>
+            </div>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31103.09609269399!2d80.20070857155233!3d12.979077914452258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d9ff2065a3b%3A0x66435015604038cc!2sVelachery%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sit!4v1574752685146!5m2!1sen!2sit"
+            width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-xlarge w3-padding-16">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </footer>
+
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jan 1, 2030 00:00:00").getTime();
+
+        var countdownfunction = setInterval(function () {
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
